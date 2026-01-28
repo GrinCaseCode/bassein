@@ -86,12 +86,24 @@ $(document).ready(function () {
 
 	//кнопка sandwich
 	$(".sandwich").click(function () {
-		$(this).toggleClass("active");
 		if ($(".menu-mobile").is(":hidden")) {
 			$(".menu-mobile").slideDown(200);
+			$(".sandwich").addClass("active");
+			$("body").addClass("no-scroll");
+			$(".menu-overlay").fadeIn(200);
 		} else {
 			$(".menu-mobile").slideUp(200);
+			$(".sandwich").removeClass("active");
+			$("body").removeClass("no-scroll");
+			$(".menu-overlay").fadeOut(200);
 		}
+	});
+
+	$(".menu-overlay").click(function () {
+		$(".menu-mobile").slideUp(200);
+		$(".sandwich").removeClass("active");
+		$("body").removeClass("no-scroll");
+		$(".menu-overlay").fadeOut(200);
 	});
 
 	//слайдер
