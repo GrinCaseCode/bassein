@@ -2519,3 +2519,6 @@ header.fixed {
 	font-size: 120%;
 	font-weight: 600;
 }
+.etaps + .portfolio .head-section {
+	padding-top: 0;
+}

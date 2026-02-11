@@ -2550,6 +2550,12 @@
     .article-time {
         margin-top: 12px;
     }
+    .completion + .etaps .head-section {
+        padding-top: 10px;
+    }
+    .about-services + .types {
+        padding-top: 30px;
+    }
 }
 
 /* Custom, iPhone Retina */
