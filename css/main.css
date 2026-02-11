@@ -97,11 +97,15 @@ form {
 	padding: 0.8333vw 0;
 	font-size: 0.8333vw;
 	color: #2a3348;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	z-index: 500;
+	transition: all 0.3s;
+}
+header.fixed {
+	background: #f8fdff;
 }
 .header__wrapper {
 	display: flex;
@@ -1399,8 +1403,14 @@ form {
 	width: 100%;
 }
 .item-news__date {
-	margin-bottom: 20px;
 	display: block;
+}
+.item-news__top {
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
 }
 .item-news__title {
 	font-size: 24px;
@@ -1563,6 +1573,19 @@ form {
 	margin: 39px auto;
 	border-radius: 16px;
 }
+.article-content__head {
+	margin-bottom: 24px;
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.article-time {
+	color: #2a3348;
+}
+.article-content .article-content__head h2 {
+	margin: 0;
+}
 
 .billbord-services__title {
 	font-size: 48px;
@@ -1626,8 +1649,8 @@ form {
 	width: 1231px;
 }
 .page-services {
-	padding-top: 104px;
-	padding-bottom: 94px;
+	padding-top: 80px;
+	padding-bottom: 50px;
 	position: relative;
 	z-index: 1;
 }
@@ -1745,7 +1768,7 @@ form {
 	color: #2a3348;
 }
 .prices-services {
-	padding-bottom: 90px;
+	padding-bottom: 20px;
 }
 .prices-services .head-section {
 	padding-top: 0;
@@ -1879,9 +1902,6 @@ form {
 .types+.etaps::before {
 	display: none;
 }
-.types+.etaps .etaps__image {
-	margin-bottom: 90px;
-}
 .item-question {
 	margin-bottom: 10px;
 	border-radius: 24px;
@@ -1970,7 +1990,7 @@ form {
 	max-width: 715px;
 }
 .advantages {
-	margin-bottom: -70px;
+	margin-bottom: -30px;
 	position: relative;
 	z-index: 1;
 }
@@ -2126,10 +2146,6 @@ form {
 	height: 58px;
 	padding: 0 32px;
 }
-.completion,
-.turnkey {
-	padding-bottom: 90px;
-}
 .completion__main {
 	padding: 24px;
 	font-size: 18px;
@@ -2273,6 +2289,9 @@ form {
 .types+.turnkey .head-section {
 	padding-top: 0;
 }
+.turnkey {
+	padding-bottom: 30px;
+}
 .portfolio+.estimate {
 	padding-top: 30px;
 }
@@ -2356,7 +2375,7 @@ form {
 	z-index: 2;
 }
 .documents {
-	padding-top: 80px;
+	padding-top: 30px;
 }
 .item-document {
 	padding-top: 146%;
@@ -2492,4 +2511,11 @@ form {
 }
 .col-lg-5 .form-page {
 	margin-left: 72px;
+}
+.about-services + .types .head-section {
+	padding-top: 10px;
+}
+.portfolio .title-small span {
+	font-size: 120%;
+	font-weight: 600;
 }

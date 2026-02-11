@@ -391,7 +391,7 @@
         font-size: 21px;
         margin-bottom: 13px;
     }
-    .item-news__date {
+    .item-news__top {
         margin-bottom: 15px;
     }
     .item-news__image {
@@ -1388,7 +1388,7 @@
         font-size: 19px;
         margin-bottom: 12px;
     }
-    .item-news__date {
+    .item-news__top {
         margin-bottom: 12px;
     }
     .item-news__content {
@@ -1690,7 +1690,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        background: #f3fbfe;
+        background: #f8fdff;
     }
     .header__wrapper .header__info,
     .header__wrapper .header__contacts,
@@ -2316,7 +2316,7 @@
         max-width: 400px;
     }
     .prices-services {
-        padding-bottom: 50px;
+        padding-bottom: 40px;
     }
     .text-block {
         font-size: 14px;
@@ -2537,10 +2537,18 @@
         padding-top: 35px;
     }
     .advantages {
-        margin-bottom: -37px;
+        margin-bottom: -15px;
     }
     .etaps::before {
         display: none;
+    }
+    .article-content__head {
+        margin-bottom: 15px;
+        margin-top: 25px;
+        display: block;
+    }
+    .article-time {
+        margin-top: 12px;
     }
 }
 
@@ -2561,7 +2569,6 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-
     .advantages__item:hover::before {
         opacity: 1;
         width: 100%;

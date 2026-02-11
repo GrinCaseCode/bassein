@@ -1,5 +1,22 @@
 $(document).ready(function () {
 
+		//прилипающие меню
+	var $menu = $(".header");
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 0 && $menu.hasClass("default")) {
+			$menu.removeClass("default").addClass("fixed");
+		} else if ($(this).scrollTop() <= 0 && $menu.hasClass("fixed")) {
+			$menu.removeClass("fixed").addClass("default");
+		}
+
+	});
+
+	if ($(this).scrollTop() > 0 && $menu.hasClass("default")) {
+		$menu.removeClass("default").addClass("fixed");
+	} else if ($(this).scrollTop() <= 0 && $menu.hasClass("fixed")) {
+		$menu.removeClass("fixed").addClass("default");
+	}
+
 
 	//кнопка sandwich
 	$(".sandwich").click(function () {
@@ -223,187 +240,51 @@ $(document).ready(function () {
 		backFocus: false,
 	});
 
-	//gsap
-	gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+	// gsap
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-	if (ScrollTrigger.isTouch !== 1) {
+if (!ScrollTrigger.isTouch) {
 
-		ScrollSmoother.create({
-			wrapper: '.wrapper',
-			content: '.content',
-			smooth: 1,
-			effects: true
-		})
+	ScrollSmoother.create({
+		wrapper: '.wrapper',
+		content: '.content',
+		smooth: 1,
+		effects: true
+	});
 
-		gsap.fromTo('.billbord', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.billbord',
-				start: 'center',
-				end: '1500',
-				scrub: true
+	const sections = [
+		'.billbord',
+		'.services',
+		'.about',
+		'.advantages',
+		'.estimate',
+		'.portfolio',
+		'.reviews',
+		'.main-services',
+		'.container--services',
+		'.prices-services',
+		'.types',
+		'.page-card',
+		'.turnkey',
+		'.etaps',
+		'.page-about',
+		'.documents'
+	];
+
+	sections.forEach(selector => {
+		gsap.fromTo(selector, 
+			{ opacity: 1 }, 
+			{
+				opacity: 0,
+				scrollTrigger: {
+					trigger: selector,
+					start: 'center',
+					end: '1500',
+					scrub: true
+				}
 			}
-		})
-
-		gsap.fromTo('.services', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.services',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.about', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.about',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.advantages', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.advantages',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.estimate', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.estimate',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.portfolio', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.portfolio',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.reviews', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.reviews',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.main-services', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.main-services',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.container--services', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.container--services',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.prices-services', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.prices-services',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.types', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.types',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.page-card', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.page-card',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.types', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.types',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-			gsap.fromTo('.turnkey', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.turnkey',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-			gsap.fromTo('.etaps', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.etaps',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.page-about', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.page-about',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-
-		gsap.fromTo('.documents', { opacity: 1 }, {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: '.documents',
-				start: 'center',
-				end: '1500',
-				scrub: true
-			}
-		})
-	}
+		);
+	});
+}
 
 });
